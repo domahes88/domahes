@@ -25,8 +25,6 @@
 - По полному соответствию слова.
 
 """
-
-
 import pickle
 
 #1
@@ -40,17 +38,17 @@ while f != 'stop':
     f = input('''
 Ведите stop, если продолжит нажмите enter ''')
 
-
-#f = open('c:/temp/data.picle', 'wb')
-
-
-
-
+f = open('c:/temp/rino', 'wb')
     
 model_s = []
 for i in range(len(model)): #Создаем единый список авто + мощность "[[a, 1], [b, 2], ...]]"
     model_s.append([model[i]])
     model_s[i].append(ls[i])
+
+#запись в pycle
+
+pickle.dump(model_s, f)
+f.close()
 
 #проверка на буквы и цифры
 
@@ -67,10 +65,17 @@ for j in range(len(model_s)):
 #Сортировка по алфовиту
 epa = model
 epa.sort()
+
+print("""
+сортировка
+
+""")
+
 for i in epa:
     print(i)
 
-    
+#Своя сортировка циклами из файла
 
-               
-               
+f = open('c:/temp/rino', 'rb')
+read = pickle.load(f)
+print(read)
