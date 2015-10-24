@@ -28,10 +28,13 @@ FUNCS = {
 
 """
 
-def app():
-    while f != 'stop':
-        a.append(input(str(n)) + ' модель авто - ')
-        b.append(input('лошадиные силы - '))
-        n += 1
-        f = input('''
-    Ведите stop, если продолжит нажмите enter ''')
+d = []
+def fff():
+    d = []
+    f = []
+    while d != 'stop':
+        f.append(input())
+        d = input()
+        return f
+def git():
+    d.append(fff())
