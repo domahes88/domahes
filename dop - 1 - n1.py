@@ -1,4 +1,4 @@
-# domahes
+# domahes 000
 import math
 pi = math.pi
 t0 = int(input())
