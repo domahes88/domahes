@@ -80,5 +80,29 @@ def sts(b):
     g = int(input('введите до какого числа будем вести чтение - '))
     print('Увожаемый вот ваш срез ', b[f:g+1])
 
+# - сохранение в pickle и загрузка из pickle - 2 отдельные функции
+
+def pic():
+    import pickle
+    f = input('Веди путь к файлу ')
+    g = open(f, 'wb')
+
+def picd():
+    import pickle
+    f = input('Веди путь к файлу ')
+    g = open(f, 'rb')
+    return g
+
+#2. Улучшаем:
+#функции Ввести и Вывести добавляем в словарь следующим образом:
+#FUNCS = {
+#'ввести': input_func,
+#'вывести': output_func,
+#}
+
+funcs = {
+    'ввести': napolnitel(),
+    'вывести': vivod(input())}
+
 
 
