@@ -27,7 +27,7 @@ FUNCS = {
 ** 7. Стараемся сделать так, чтобы все состояло из функций, и каждая функция была как можно короче (хорошо в районе 3 строк кода).
 """
 
-
+"""
 
 
 #1
@@ -84,25 +84,72 @@ def sts(b):
 
 def pic():
     import pickle
-    f = input('Веди путь к файлу ')
+    f = input('Веди путь к файлу и его имя ')
     g = open(f, 'wb')
+    g.close()
 
-def picd():
+def picd(a):
     import pickle
     f = input('Веди путь к файлу ')
     g = open(f, 'rb')
-    return g
+    load.pickle()
 
-#2. Улучшаем:
-#функции Ввести и Вывести добавляем в словарь следующим образом:
-#FUNCS = {
-#'ввести': input_func,
-#'вывести': output_func,
-#}
+
 
 funcs = {
     'ввести': napolnitel(),
     'вывести': vivod(input())}
 
+"""
+
+#version 0.3
+
+import pickle
+
+t = []
+global t
+
+
+def creat_list():
+
+    d = []
+    global x
+
+    name = input('Введите имя файла - ')
+
+    if d != open('d:/' + name, 'wb'):
+        d = open('d:/' + name, 'wb')
+        x = d
+    else:
+        pass
+
+def zapis():
+
+    car     =   input('Введите авто - ')
+    nomer   =   input('Государственный знак - ')
+    ls      =   input('Мощность - ')
+
+
+    t.append([car, nomer, ls])
+
+    y = input('Желаете завершить ввод? если да то введите stop - ')
+
+    if y == 'stop':
+        print(t)
+        pickle.dump(t, x)
+    if y == 'stop':
+        x.close()
+
+    else:
+        zapis()
+
+def loadd():
+
+    f = open(x.name, 'rb')
+    f0 = pickle.load(f)
+    print(f0)
+
+creat_list()
+zapis()
 
 
