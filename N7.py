@@ -1,12 +1,18 @@
+# coding: utf-8
+def start():
+        return input()
+
+
 class Tank:
 
     def __init__(self):
-        
-        self.model = input('Это модель танка - ')
+        print('Это модель такнка - ', end='')
+        self.model = start()
 
         self.shasi = []
         while self.shasi != 'y':
-            self.shasi = input('Шасси танка y/n - ')
+            print('Шасси танка y/n - ', end='')
+            self.shasi = start()
             if self.shasi == 'n':
                 break
         if self.shasi == 'y':
@@ -17,7 +23,8 @@ class Tank:
 
         self.gusinici = []
         while self.gusinici != 'y':
-            self.gusinici = input('Гусиници танка y/n - ')
+            print('Гусиници танка y/n - ', end='')
+            self.gusinici = start()
             if self.gusinici == 'n':
                 break
         if self.gusinici == 'y':
@@ -25,8 +32,8 @@ class Tank:
         else:
             self.gusinici = 'Не устоновленно!'
 
-
-        self.skorosti = input('Скорость танка - ')
+        print('Скорость танка - ', end='')
+        self.skorosti = start()
         if self.shasi != 'Устоновленно!' or self.gusinici != 'Устоновленно!':
             self.skorosti = 0
 
@@ -35,17 +42,18 @@ class Tank:
         print('Модель танка: {}, Шасси танка: {}, Гусиници танка: {}, Скорость танка: {}'.format(self.model, self.shasi, self.gusinici, self.skorosti))
 
     def change(self):
-        
-        g = input('Снять шасси танка? - y/n - ')
+
+        print('Снять шасси танка? - y/n - ', end='')
+        g = start()
         if g == 'y':
-            self.colesa = 'Не устоновленно!'
+            self.shasi = 'Не устоновленно!'
             self.skorosti = 0
         else:
             pass
-        
-        d = input('Снять гусиници танка? - y/n - ')
+        print('Снять гусиници танка? - y/n - ', end='')
+        d = start()
         if d == 'y':
-            self.colesa = 'Не устоновленно!'
+            self.gusinici = 'Не устоновленно!'
             self.skorosti = 0
         else:
             pass
@@ -53,20 +61,21 @@ class Tank:
 class Car:
     
     def __init__(self):
-        
-        self.model = input('Это модель машины - ')
+        print('Это модель машины - ', end='')
+        self.model = start()
 
         self.colesa = []
         while self.colesa != 'y':
-            self.colesa = input('Колеса машины y/n - ')
+            print('Колеса машины y/n - ', end='')
+            self.colesa = start()
             if self.colesa == 'n':
                 break
         if self.colesa == 'y':
             self.colesa = 'Устоновленно!'
         else:
             self.colesa = 'Не устоновленно!'
-           
-        self.skorosti = input('Скорость машины - ')
+        print('Скорость машины - ', end='')
+        self.skorosti = start()
         if self.colesa != 'Устоновленно!':
             self.skorosti = 0
 
@@ -75,15 +84,13 @@ class Car:
         print('Это модель машины: {}, Колеса машины: {}, Скорость машины: {}'.format(self.model, self.colesa, self.skorosti))
 
     def change(self):
-        
-        g = input('Снять колеса с машины? - y/n - ')
+        print('Снять колеса с машины? - y/n - ', end='')
+        g = start()
         if g == 'y':
             self.colesa = 'Не устоновленно!'
             self.skorosti = 0
         else:
             pass
-
-
 
 class Telega:
 
@@ -91,15 +98,16 @@ class Telega:
        
         self.colesa = []
         while self.colesa != 'y':
-            self.colesa = input('Колеса телеги y/n - ')
+            print('Колеса телеги y/n - ', end='')
+            self.colesa = start()
             if self.colesa == 'n':
                 break
         if self.colesa == 'y':
             self.colesa = 'Устоновленно!'
         else:
             self.colesa = 'Не устоновленно!'
-          
-        self.skorosti = input('Скорость телеги - ')
+        print('Скорость телеги - ', end='')
+        self.skorosti = start()
         if self.colesa != 'Устоновленно!':
             self.skorosti = 0
 
@@ -108,8 +116,8 @@ class Telega:
         print('Колеса телеги: {}, Скорость телеги: {}'.format(self.colesa, self.skorosti))
 
     def change(self):
-        
-        g = input('Снять колеса с телеги? - y/n - ')
+        print('Снять колеса с телеги? - y/n - ', end='')
+        g = start()
         if g == 'y':
             self.colesa = 'Не устоновленно!'
             self.skorosti = 0
@@ -134,7 +142,6 @@ def list_list():
     print()
     [i.status() for i in cars]
 
-
 def pusk():
     
     g = input('Жилаете начать ввод? - y/n - ')
@@ -144,3 +151,4 @@ def pusk():
         print('подумайте еще раз - !', '\n')
         pusk()
 pusk()
+
