@@ -1,6 +1,7 @@
 
 import os
 
+
 #f = str(input('Где будем искать - '))      #   Путь откуда
 #folder = str(input('Путь записи - '))      #   Путь откуда куда ( Пример I:\\[111]\\ )
 
@@ -37,6 +38,7 @@ def re():
     goo = 0
     ltt = []
     dss = []
+    zzz = []
 
     for i in ggg:
 
@@ -73,20 +75,48 @@ def re():
 
     print(rob)
     print('''
+    robrobrobrobrobrobrobrobrobrob
     ''')
+    r = []
+    for i in rob:
+        r.append(i)
+
+    print(r)
+    print('______________________________________________________')
+
+
+
 
 # -----------   rob Список создания
 # -----------   bob Список пропуска
 
     for i in rob:
+
         x = str(folder[:2])
         x1 = i[2:]
         x2 = x + x1
         print(x2)
-        if x2 not in bob:
-            os.symlink(i, x2)
+        zzz.append(x2)
 
-    print('ok')
+    print(zzz)
+
+    for i in zzz:
+        x = str(folder)
+        if i not in bob:
+            g = i[3:]
+            g1 = x + g
+            print(g1)
+            os.symlink(i, g1)
+
+
+
+# -----------   zzz Список создания
+# -----------   bob Список пропуска
+
+
+print('ok')
+
+
 
 
 re()
