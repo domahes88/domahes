@@ -55,9 +55,7 @@ def re():
         bob.append(path_x)
 
     print(bob)
-    print('''
-
-    ''')
+    print('_________________________________________________________________________________________')
 
     for i in bob:
         ltt = os.listdir(i)
@@ -65,14 +63,30 @@ def re():
             ds = [i + '\\' + j]
             dss.append(ds)                      #   Создатель общего списка файлов при сопостовлении со списком
                                                 #   - bob. Имена из bob пропускаются
+    #print(dss)
     print('''
     ''')
-    print(dss)
 
-# -----------   dss Список создания
+    rob = []
+    for j in dss:
+        rob.append(j[0])
+
+    print(rob)
+    print('''
+    ''')
+
+# -----------   rob Список создания
 # -----------   bob Список пропуска
 
+    for i in rob:
+        x = str(folder[:2])
+        x1 = i[2:]
+        x2 = x + x1
+        print(x2)
+        if x2 not in bob:
+            os.symlink(i, x2)
 
+    print('ok')
 
 
 re()
